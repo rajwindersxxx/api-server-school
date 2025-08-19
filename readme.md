@@ -1,9 +1,7 @@
----
-# 🛒 E-Commerce Backend API
+# Internship challenge
 
-A **production-ready REST API** for an e-commerce web application built with **Node.js**, **Express**, **TypeScript**, **Zod**, and **PostgreSQL** (via Prisma).
+a small internship challenge for building a simple api return school list and create schools
 
-This API supports **user authentication**, **product management**, **order processing**, and **admin features**, designed for **scalability**, **security**, and **clean architecture**.
 ---
 
 ## 🛠 Tech Stack
@@ -15,7 +13,6 @@ This API supports **user authentication**, **product management**, **order proce
 - **Prisma ORM** – Type-safe database access
 - **PostgreSQL** – Relational database
 - **Zod** – Runtime schema validation
-- **JWT** – Authentication via cookies
 
 ### **Dev Tools**
 
@@ -34,7 +31,6 @@ This API supports **user authentication**, **product management**, **order proce
 │   ├── controller/      # Route controllers
 │   ├── middleware/      # Auth, error handling, validation
 │   ├── routes/          # API routes
-│   ├── supabase/        # For strong images in bucket
 │   ├── utils/           # Helper functions
 │   ├── zod/             # Zod validation schemas
 │   ├── types/           # Type definitions
@@ -64,8 +60,8 @@ This API supports **user authentication**, **product management**, **order proce
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/rajwindersxxx/shopping-e-commerce-api.git
-cd shopping-e-commerce-api.git
+git clone https://github.com/rajwindersxxx/api-server-school
+cd api-server-school
 ```
 
 2. Install dependencies:
@@ -78,10 +74,7 @@ npm install
 
 ```bash
 DATABASE_URL=<postgres-url>
-SUPABASE_URL=<supabase-url>
-SUPABASE_SERVICE_ROLE_KEY=<supabase-server-key>
-ACCESS_SECRET=<secret-for-jwt>
-CORE_URL=<frontend-domain>   #only for production
+
 ```
 
 4. Initialize Prisma:
@@ -117,22 +110,14 @@ You should see:
 ## 📜 API Documentation
 
 All API endpoints are documented with **Postman**:
-[**View API Docs in Postman**](https://documenter.getpostman.com/view/36192494/2sB3BHkonF)
+[**View API Docs in Postman**](https://documenter.getpostman.com/view/36192494/2sB3BKETje)
 
 **Key endpoints include:**
 
-| Feature                | Endpoint                             | Method |
-| ---------------------- | ------------------------------------ | ------ |
-| User SigUp             | `/api/v1/auth/signUp`                | POST   |
-| User Login             | `/api/v1/auth/login`                 | POST   |
-| Get Products           | `/api/v1/products`                   | GET    |
-| Get Product by ID      | `/api/v1/products/:id`               | GET    |
-| Create Product (Admin) | `/api/v1/products`                   | POST   |
-| Update Product (Admin) | `/api/v1/products/:id`               | PUT    |
-| Delete Product (Admin) | `/api/v1/products/:id`               | DELETE |
-| Create Order           | `/api/v1/orders`                     | POST   |
-| Get User Orders        | `/api/v1/orders`                     | GET    |
-| checkout Order         | `/api/v1/orders/checkout/:id/status` | PATCH  |
+| Feature         | Endpoint             | Method |
+| --------------- | -------------------- | ------ |
+| Add school      | `/api/v1/school`     | POST   |
+| get school list | `/api/v1/auth/login` | GET    |
 
 ---
 
@@ -140,15 +125,5 @@ All API endpoints are documented with **Postman**:
 
 - **Type-safe backend & database** using Prisma + TypeScript
 - **Runtime validation** with Zod
-- **JWT authentication** via cookies
-- **Role-based access** (User & Admin)
-- **CRUD operations** for Products & Orders
+- **Create and read operations** for School
 - **Postman documentation** for all endpoints
-
-## Challenges
-
-- my app not crash on production due to invalid cookies config.
-- during testing sometime token expire which is bit challenging to fix.
-- It feel bit challenging to config core and understand it working
-- making github ci/cd pipline
-- first time railway hosting is
