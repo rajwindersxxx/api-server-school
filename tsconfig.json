@@ -2,6 +2,7 @@
   "compilerOptions": {
     "types": ["node"],
     "useUnknownInCatchVariables": false,
+    "resolveJsonModule": true,
     "target": "es2022",
     "module": "commonjs",
     "outDir": "./dist",
@@ -17,6 +18,6 @@
       "tests/testModules"
     ]
   },
-  "include": ["src/**/*.ts", "tests"],
+  "include": ["src/**/*.ts", "tests", "src/config/firebase.ts"],
   "exclude": ["node_modules", "dist", "tests"]
 }

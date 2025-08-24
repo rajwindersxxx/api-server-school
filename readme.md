@@ -127,3 +127,8 @@ All API endpoints are documented with **Postman**:
 - **Runtime validation** with Zod
 - **Create and read operations** for School
 - **Postman documentation** for all endpoints
+
+## Playground
+
+- build basic crud with firebase
+- setting up firebase need firebase.json as key

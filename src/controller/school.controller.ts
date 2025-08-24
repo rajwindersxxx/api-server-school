@@ -35,6 +35,8 @@ export class schoolController {
 `;
     const data: School = await prisma.$queryRawUnsafe(query);
     const total = await prisma.school.count();
-    response(res, data, 200, { otherFields: {limit:  Number(limit), offset: Number(offset), total } });
+    response(res, data, 200, {
+      otherFields: { limit: Number(limit), offset: Number(offset), total },
+    });
   });
 }
